@@ -3,16 +3,18 @@ Custom Kali Linux OS arm64 distro accessible via VNC, RDP or web and Tor. The we
 
 # Platform configuration
 
-No special configuration is necessary, however some recommended variables are available:
+No special configuration is necessary, however some recommended variables are available at runtime :
 
 ## IPTables
 
-provide NET_ADMIN privileges to update iptables on the bridge network from within docker.
+provide _NET_ADMIN_ privileges to update iptables on the bridge network from within docker.
 
-** For more information on Bridge Network refer [here](https://docs.docker.com/network/bridge/) **
+**For more information on Bridge Network refer [here](https://docs.docker.com/network/bridge/)**
 
-There will be risks if allowed on host network ; so create a custom bridge or use default bridge with command : --net="bridge" 
-
+There will be risks if allowed on host network ; so create a custom bridge or use default bridge with command : 
+```term
+--cap-add=NET_ADMIN --cap-add=NET_RAW  --net="bridge" 
+```
 ## Ports
 
 | Port       | Description                                  |
