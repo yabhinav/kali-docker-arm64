@@ -8,7 +8,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get install -y kali-linux-default
 
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends evince file-roller gnome-themes-standard gpicview gtk2-engines-pixbuf ttf-ubuntu-font-family xfce4 xfce4-whiskermenu-plugin xorg xserver-xorg xfce4-indicator-plugin xfce4-terminal numix-icon-theme numix-icon-theme-circle
+    apt-get install -y --no-install-recommends evince file-roller gnome-themes-standard gpicview gtk2-engines-pixbuf xfce4 xfce4-whiskermenu-plugin xorg xserver-xorg xfce4-indicator-plugin xfce4-terminal numix-icon-theme numix-icon-theme-circle
 
 RUN apt-get install -y xrdp locales supervisor sudo ibus ibus-mozc dbus dbus-x11 curl inetutils-ping firefox-esr rlwrap
 
@@ -52,7 +52,7 @@ RUN echo "xfce4-session" > /etc/skel/.xsession
     
 RUN apt-get install -y xfce4-taskmanager mousepad wget
 
-RUN wget https://oswallpapers.com/wp-content/uploads/2020/04/default-1.jpg -O /usr/share/backgrounds/xfce/default.jpg
+# RUN wget https://oswallpapers.com/wp-content/uploads/2020/04/default-1.jpg -O /usr/share/backgrounds/xfce/default.jpg
 
 RUN apt full-upgrade -y
 
