@@ -73,9 +73,17 @@ COPY xrandr_config /home/xuser/xrandr_config
 
 RUN apt-get update && apt-get install -y openvpn
 
+RUN cd /opt/ && \
+    git clone https://github.com/yabhinav/kalitorify && \
+    apt-get install -y tor curl &&\
+    cd /opt/kalitorify/ &&\
+    sudo make install
+    
 COPY entrypoint.sh .
 RUN chmod +x entrypoint.sh
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 
 ENTRYPOINT ["./entrypoint.sh"]
+CMD /sbin/init
+
