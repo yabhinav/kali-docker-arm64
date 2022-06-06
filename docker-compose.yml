@@ -1,13 +1,14 @@
-version: '2'
+version: '2.6'
 
 services:
   kalitor:
     image: kalitor/latest
+    build: .
     restart: always
     ports:
       - 6080:6080
+    network_mode: bridge
+    cap_add:
+      - NET_ADMIN
     environment:
-      - DISPLAY_WIDTH: 1920
-      - DISPLAY_HEIGHT: 1080
-      - KEEP_APP_RUNNING: 1
       - TZ: Europe/Vienna

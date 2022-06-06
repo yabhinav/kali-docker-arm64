@@ -83,7 +83,7 @@ COPY entrypoint.sh .
 RUN chmod +x entrypoint.sh
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
+EXPOSE 6080
 
 ENTRYPOINT ["./entrypoint.sh"]
 CMD /sbin/init
-

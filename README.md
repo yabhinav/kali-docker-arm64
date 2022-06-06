@@ -1,4 +1,5 @@
 # About
+
 Custom Kali Linux OS arm64 distro accessible via VNC, RDP or web and Tor. The web interface will be available on port 6080.
 
 # Platform configuration
@@ -30,7 +31,7 @@ See the docker-compose [here](https://github.com/yabhinav/kali-docker-arm64/blob
 
 Build image with the command :
 ``` term
-docker build .  -t 'kalitor:latest'
+docker build .  -t 'kalitor:latest'  --no-cache
 ```
 
 ## Run container :
@@ -38,7 +39,7 @@ docker build .  -t 'kalitor:latest'
 To run container without kalitorify :
 
 ```term
-docker run -p 6080:6080  kali-linux:latest -it bash
+docker run -p 6080:6080  kalitor:latest -it bash
 ```
 
 ## Run container (kalitorify):
@@ -46,7 +47,7 @@ docker run -p 6080:6080  kali-linux:latest -it bash
 To run container with kalitorify :
 
 ```term
-docker run -p 6080:6080 --cap-add=NET_ADMIN --cap-add=NET_RAW  kali-linux:latest -it bash
+docker run -p 6080:6080 --cap-add=NET_ADMIN --cap-add=NET_RAW  kalitor:latest -it bash
 ```
 
 Verify the IP Address and MAC Address wth commands 
